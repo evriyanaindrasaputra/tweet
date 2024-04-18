@@ -3,8 +3,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: "/tweet/",
   plugins: [
     remix({
+      basename : '/tweet/',
       ssr: false,
     }),
     tsconfigPaths(),
