@@ -1,32 +1,24 @@
 import type { MetaFunction } from "@remix-run/node";
+import { FloatingNav } from "~/components/floating-navbar";
+import { HeroParallax } from "~/components/hero-parallax";
+import { Navbar } from "~/components/navbar";
+import { products } from "~/data/products";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix SPA" },
-    { name: "description", content: "Welcome to Remix (SPA Mode)!" },
+    { title: "Kdrama" },
+    { name: "description", content: "Welcome to KDrama (SPA Mode)!" },
   ];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix (SPA Mode)</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/future/spa-mode"
-            rel="noreferrer"
-          >
-            SPA Mode Guide
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <>
+      <Navbar />
+      <div className="relative  w-full">
+        <FloatingNav />
+      </div>
+      <HeroParallax products={products} />
+    </>
   );
 }
